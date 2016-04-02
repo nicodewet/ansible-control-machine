@@ -3,10 +3,10 @@ Vagrant based ansible control machine
 
 ## Ansible Vault
 
-$ export EDITOR=nano
-$ ansible-vault create vault.yml
-$ ansible-vault edit vault.yml
-$ ansible-vault view vault.yml
+  * $ export EDITOR=nano
+  * $ ansible-vault create vault.yml
+  * $ ansible-vault edit vault.yml
+  * $ ansible-vault view vault.yml
 
 ## Relevant AWS Resources
 
@@ -36,6 +36,6 @@ $ ansible-vault view vault.yml
   * Kernel ID: -
   * Product Codes: -
 
-#### Further Aamazon Linux References
+#### Further Amazon Linux References
 
 [Installing Docker](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html#install_docker)
