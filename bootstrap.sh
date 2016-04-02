@@ -4,4 +4,11 @@
 # Install Ansible
 ########################
 
-sudo dnf -y install ansible
+dnf -y install ansible
+
+#####################################################
+# AWS Control Modules
+# @see http://docs.ansible.com/ansible/guide_aws.html
+#####################################################
+
+pip install boto
