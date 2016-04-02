@@ -8,8 +8,11 @@ Vagrant based ansible control machine
   * $ ansible-vault edit vault.yml
   * $ ansible-vault view vault.yml
 
-## Relevant AWS Resources
+[Best practice approach for variables and vaults](http://docs.ansible.com/ansible/playbooks_best_practices.html#best-practices-for-variables-and-vaults).
 
+## Relevant Ansible and AWS Resources
+
+  * [Ansible ec2 module](http://docs.ansible.com/ansible/ec2_module.html)
   * [How Do I Get Security Credentials?](http://docs.aws.amazon.com/general/latest/gr/getting-aws-sec-creds.html)
   * [Controlling Access To Amazon EC2 Resources](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UsingIAM.html)
   * [Finding a Linux AMI](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html)
