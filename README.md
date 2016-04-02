@@ -1,7 +1,10 @@
 # ansible-control-machine
-Vagrant based ansible control machine
 
-## Ansible Vault
+Vagrant based ansible control machine.
+
+Includes a basic AWS provisioning play. Run with $ ansible-playbook site.yml --ask-vault-pass
+
+## [Ansible Vault](http://docs.ansible.com/ansible/playbooks_vault.html)
 
   * $ export EDITOR=nano
   * $ ansible-vault create vault.yml
@@ -12,14 +15,18 @@ Vagrant based ansible control machine
 
 ## Relevant Ansible and AWS Resources
 
-  * [Ansible ec2 module](http://docs.ansible.com/ansible/ec2_module.html)
-  * [How Do I Get Security Credentials?](http://docs.aws.amazon.com/general/latest/gr/getting-aws-sec-creds.html)
-  * [Controlling Access To Amazon EC2 Resources](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UsingIAM.html)
-  * [Finding a Linux AMI](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html)
+  * [Ansible: ec2 module](http://docs.ansible.com/ansible/ec2_module.html)
+  * [AWS: How Do I Get Security Credentials?](http://docs.aws.amazon.com/general/latest/gr/getting-aws-sec-creds.html)
+  * [AWS: Controlling Access To Amazon EC2 Resources](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UsingIAM.html)
+  * [AWS: Finding a Linux AMI](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html)
+  * [AWS: Amazon EC2 Security Groups for Linux Instances](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html)
+  * [AWS: Amazon EC2 Root Device Volume](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/RootDeviceStorage.html)
   
 ### [Amazon Linux](https://aws.amazon.com/amazon-linux-ami/)
 
 [Amazon Linux AMI 2016.03 Release Notes](https://aws.amazon.com/amazon-linux-ami/2016.03-release-notes/)
+
+#### ami-4c2e0e2f
 
   * AMI ID: ami-4c2e0e2f
   * AMI Name: amzn-ami-hvm-2016.03.0.x86_64-s3
@@ -38,6 +45,32 @@ Vagrant based ansible control machine
   * RAM disk ID: -
   * Kernel ID: -
   * Product Codes: -
+
+#### ami-d72a0ab4
+
+  * AMI ID: ami-d72a0ab4
+  * AMI Name: amzn-ami-hvm-2016.03.0.x86_64-ebs
+  * Owner: 137112412989
+  * Source: amazon/amzn-ami-hvm-2016.03.0.x86_64-ebs
+  * Status: available
+  * State Reason: -
+  * Creation date: March 17, 2016 at 12:49:32 PM UTC+13
+  * Platform: Amazon Linux
+  * Architecture: x86_64
+  * Image Type: machine
+  * Virtualization type: hvm
+  * Description: Amazon Linux AMI 2016.03.0 x86_64 HVM EBS
+  * Root Device Name: /dev/xvda
+  * Root Device Type: ebs
+  * RAM disk ID: -
+  * Kernel ID: -
+  * Product Codes: -
+  * Block Devices: /dev/xvda=snap-fa7a5b12:8:true:standard
+
+#### Gotchas
+
+  * AMI 'ami-4c2e0e2f' with an instance-store root device is not supported for the instance type 't2.nano'. 
+  * AMI 'ami-4c2e0e2f' with an instance-store root device is not supported for the instance type 't2.micro'.
 
 #### Further Amazon Linux References
 
