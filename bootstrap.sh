@@ -11,7 +11,8 @@ dnf -y install ansible
 # @see http://docs.ansible.com/ansible/guide_aws.html
 #####################################################
 
-# The boto module is a AWS integration requirement
+# The boto module is a AWS integration requirement as it is the Python 
+# interface to AWS
 pip install boto
 
 ######################################
@@ -29,5 +30,4 @@ ansible --version
 dnf -y install wget
 wget https://raw.githubusercontent.com/ansible/ansible/devel/contrib/inventory/ec2.py
 mv ec2.py /vagrant
-
-
+chmod u+x /vagrant/ec2.py

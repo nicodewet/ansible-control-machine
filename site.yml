@@ -8,19 +8,27 @@
     - group_vars/aws/vault.yml
 
   tasks:
+    - name: AWS Sydney private ssl key
+      template: src=etc-ssl-private-site.key dest=/Users/nico/git/ansible-control-machine/ansible_test.pem
+      tags:
+         - configuration 
+  
     - name: Provision a set of instances
       ec2:
          aws_access_key: "{{ aws_access_key }}"
          aws_secret_key: "{{ aws_secret_key }}"
+         key_name: ansible
          group: default
          instance_type: t2.nano
          image: "{{ ami_id }}"
          wait: true
-         exact_count: 2
+         exact_count: 1
          count_tag:
-            Name: Demo
+            Name: Dev
          instance_tags:
-            Name: Demo
+            Name: Dev
          region: ap-southeast-2
       register: ec2
+      tags:
+         - provision
 ...

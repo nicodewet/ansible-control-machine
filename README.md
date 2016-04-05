@@ -11,6 +11,12 @@ Includes a basic AWS provisioning play. Run with $ ansible-playbook site.yml --a
   * $ ansible-vault edit vault.yml
   * $ ansible-vault view vault.yml
 
+Below we run an Ansible play to reproduce our AWS encrypted private key and then we verify (manually at this stage) the fingerprint. The latter entails
+comparing the fingerprint stored by AWS (and visible on the EC2 console) with what we have produced.
+
+  * $ ansible-playbook site.yml --ask-vault-pass --tags "configuration" 
+  * $ openssl pkcs8 -in ansible_test.pem -inform PEM -outform DER -topk8 -nocrypt | openssl sha1 -c
+
 [Best practice approach for variables and vaults](http://docs.ansible.com/ansible/playbooks_best_practices.html#best-practices-for-variables-and-vaults).
 
 ## Relevant Ansible and AWS Resources
@@ -21,6 +27,7 @@ Includes a basic AWS provisioning play. Run with $ ansible-playbook site.yml --a
   * [AWS: Finding a Linux AMI](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html)
   * [AWS: Amazon EC2 Security Groups for Linux Instances](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html)
   * [AWS: Amazon EC2 Root Device Volume](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/RootDeviceStorage.html)
+  * [AWS: Amazon EC2 Key Pairs](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)
   
 ### [Amazon Linux](https://aws.amazon.com/amazon-linux-ami/)
 
