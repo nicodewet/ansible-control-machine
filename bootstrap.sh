@@ -32,3 +32,11 @@ apt-get -y install wget
 wget https://raw.githubusercontent.com/ansible/ansible/devel/contrib/inventory/ec2.py
 mv ec2.py /vagrant
 chmod u+x /vagrant/ec2.py
+
+######################################################################################
+# Configure Ansible Behavioral Inventory Parameters
+# @see http://docs.ansible.com/ansible/intro_inventory.html
+# @see http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html
+######################################################################################
+
+cp /vagrant/hosts /etc/ansible/hosts
