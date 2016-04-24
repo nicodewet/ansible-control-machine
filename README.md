@@ -82,3 +82,4 @@ comparing the fingerprint stored by AWS (and visible on the EC2 console) with wh
 #### Further Amazon Linux References
 
 [Installing Docker](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html#install_docker)
+[Ansible Auto Scaling Tutorial](https://github.com/atplanet/ansible-auto-scaling-tutorial)
