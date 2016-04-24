@@ -1,10 +1,17 @@
 #!/usr/bin/env bash
 
-########################
+#########################################################
 # Install Ansible
-########################
+#
+# - install specific version as we don't want our scripts
+#   to regress based on an upstream ansible regression
+#
+#########################################################
 
-apt-get -y install ansible
+# To get the latest ansible we would use ppa:ansible/ansible
+apt-add-repository -y ppa:ansible/ansible-1.9
+apt-get -y update
+apt-get -y install ansible=1.9.6-1ppa~trusty
 
 #####################################################
 # AWS Control Modules
@@ -16,22 +23,15 @@ apt-get -y install ansible
 apt-get -y install python-pip
 pip install boto
 
-######################################
-# Make sure we have the latest Ansible
-######################################
-
-pip install --upgrade ansible
-ansible --version
-
 ###################################################################
 # AWS EC2 External Inventory Script
 # @see http://docs.ansible.com/ansible/intro_dynamic_inventory.html
 ###################################################################
 
-apt-get -y install wget
-wget https://raw.githubusercontent.com/ansible/ansible/devel/contrib/inventory/ec2.py
-mv ec2.py /vagrant
-chmod u+x /vagrant/ec2.py
+# apt-get -y install wget
+# wget https://raw.githubusercontent.com/ansible/ansible/devel/contrib/inventory/ec2.py
+# mv ec2.py /vagrant
+# chmod u+x /vagrant/ec2.py
 
 ######################################################################################
 # Configure Ansible Behavioral Inventory Parameters

@@ -69,5 +69,11 @@
 
      - name: Check NTP service
        service: name=ntpd state=started
+     - name: Docker repo install
+       copy: src=docker.repo
+        dest=/etc/yum.repos.d/
+        owner=root group=root mode=0644
+     - name: Install the latest version of docker engine
+       yum: name=docker state=latest
 
 ...
