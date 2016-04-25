@@ -2,7 +2,12 @@
 
 Vagrant based ansible control machine.
 
-Includes a basic AWS provisioning play. Run with $ ansible-playbook site.yml --ask-vault-pass
+Includes a basic AWS provisioning play. 
+
+Run options:
+
+$ ansible-playbook site.yml --ask-vault-pass
+$ ansible-playbook site.yml --ask-vault-pass -vvvv
 
 ## [Ansible Vault](http://docs.ansible.com/ansible/playbooks_vault.html)
 
