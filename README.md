@@ -8,6 +8,7 @@ Run options:
 
 $ ansible-playbook site.yml --ask-vault-pass
 $ ansible-playbook site.yml --ask-vault-pass -vvvv
+$ ansible-playbook site.yml --ask-vault-pass -vvvv -e "ansible_ssh_private_key_file=/home/vagrant/.ssh/ansible.pem"
 
 ## [Ansible Vault](http://docs.ansible.com/ansible/playbooks_vault.html)
 
