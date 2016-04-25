@@ -40,3 +40,5 @@ pip install boto
 ######################################################################################
 
 cp /vagrant/hosts /etc/ansible/hosts
+# copy ansible config with host_key_checking set to false
+cp ansible.cfg /etc/ansible/ansible.cfg
