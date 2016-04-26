@@ -34,6 +34,11 @@ comparing the fingerprint stored by AWS (and visible on the EC2 console) with wh
   * [AWS: Amazon EC2 Security Groups for Linux Instances](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html)
   * [AWS: Amazon EC2 Root Device Volume](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/RootDeviceStorage.html)
   * [AWS: Amazon EC2 Key Pairs](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)
+
+### [Ansible and Docker](https://www.ansible.com/docker)
+
+ * [docker_image - manage docker images](http://docs.ansible.com/ansible/docker_image_module.html)
+ * [docker - manage docker containers](http://docs.ansible.com/ansible/docker_module.html)
   
 ### [Amazon Linux](https://aws.amazon.com/amazon-linux-ami/)
 

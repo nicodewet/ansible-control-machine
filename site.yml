@@ -68,13 +68,27 @@
 
   tasks:
 
-     - name: Check NTP service
-       service: name=ntpd state=started
-     - name: Docker repo install
-       copy: src=docker.repo
-        dest=/etc/yum.repos.d/
-        owner=root group=root mode=0644
      - name: Install the latest version of docker engine
        yum: name=docker state=latest
+
+     - name: Start docker service
+       service: name=docker state=started
+
+     # http://docs.ansible.com/ansible/docker_module.html
+     - name: Pull and run hello-world image
+       docker:
+         image: hello-world
+         registry: DockerHub
+         pull: missing
+         state: started
+
+     # https://hub.docker.com/r/library/jenkins/
+     - name: Pull and install official jenkins image
+       docker: 
+         image: jenkins
+         registry: DockerHub
+         pull: missing
+         ports: 0.0.0.0:8080:8080, 0.0.0.0:50000:50000
+         state: running
 
 ...
