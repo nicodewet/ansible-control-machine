@@ -24,14 +24,6 @@ apt-get -y install ansible=1.9.6-1ppa~trusty
 # interface to AWS
 apt-get -y install python-pip
 pip install boto
-# pip show docker-py
-pip install docker-py
-cp /vagrant/docker.list /etc/apt/sources.list.d/
-apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
-apt-get -y update
-apt-get -y install apparmor
-apt-get -y install docker-engine
-docker run hello-world
 
 ###################################################################
 # AWS EC2 External Inventory Script
