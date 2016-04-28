@@ -41,6 +41,17 @@
       register: ec2
       tags:
          - provision
+    
+    # Add dev.foo.com as an A record and wait until the changes have been replicated
+    - name: Give the new host a DNS A record
+      route53:
+          command: create
+          zone: makaro.io
+          record: dev.makaro.io
+          type: A
+          ttl: 60
+          value: "{{item.public_ip}}"
+      with_items: ec2.instances
 
      # Use the add_host module to dynamically create a host group consisting of these new 
      # instances. This facilitates performing configuration actions on the hosts immediately 
@@ -98,7 +109,7 @@
          image: jenkins
          registry: DockerHub
          pull: missing
-         ports: 0.0.0.0:8080:8080, 0.0.0.0:50000:50000
+         ports: 0.0.0.0:8080:8080
          state: running
 
 ...
