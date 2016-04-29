@@ -45,6 +45,8 @@
     # Add dev.foo.com as an A record and wait until the changes have been replicated
     - name: Give the new host a DNS A record
       route53:
+          aws_access_key: "{{ aws_access_key }}"
+          aws_secret_key: "{{ aws_secret_key }}"
           command: create
           zone: makaro.io
           record: dev.makaro.io
@@ -103,10 +105,10 @@
 
      # https://hub.docker.com/r/library/jenkins/
      # https://docs.docker.com/engine/reference/api/docker_remote_api/
-     - name: Pull and install official jenkins image
+     - name: Pull and install official alpine linux based jenkins image
        docker:
          docker_api_version: 1.21 
-         image: jenkins
+         image: jenkins:alpine
          registry: DockerHub
          pull: missing
          ports: 0.0.0.0:8080:8080
