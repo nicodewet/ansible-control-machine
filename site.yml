@@ -111,7 +111,7 @@
          image: jenkins:alpine
          registry: DockerHub
          pull: missing
-         ports: 0.0.0.0:8080:8080
+         ports: 0.0.0.0:80:8080
          state: running
 
 ...
